@@ -3,7 +3,7 @@
 const getPromise = () => {
   return new Promise((resolve, reject) => {
     let success = true;
-    if (!success) {
+    if (success) {
       resolve("Operation succeeded");
     } else {
       reject("Operation failed");
