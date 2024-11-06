@@ -38,17 +38,17 @@ const fetchUserPosts = (userId) => {
 //   });
 
 //Fetch data for both userId 1 and userId 2 in parallel
-Promise.all([fetchUserData(1), fetchUserData(2), fetchUserData(3)])
-  .then((users) => {
-    console.log("User data of Users: ", users);
-    return Promise.all(users.map((user) => fetchUserPosts(user.userId)));
-  })
-  .then((posts) => {
-    console.log("User posts of users: ", posts);
-  })
-  .catch((error) => {
-    console.log("Error: ", error);
-  });
+// Promise.all([fetchUserData(1), fetchUserData(2), fetchUserData(3)])
+//   .then((users) => {
+//     console.log("User data of Users: ", users);
+//     return Promise.all(users.map((user) => fetchUserPosts(user.userId)));
+//   })
+//   .then((posts) => {
+//     console.log("User posts of users: ", posts);
+//   })
+//   .catch((error) => {
+//     console.log("Error: ", error);
+//   });
 
 // Fetch data and posts for each user individually
 Promise.all(
@@ -68,3 +68,15 @@ Promise.all(
   .catch((error) => {
     console.error("Error:", error);
   });
+
+async function fetchUser() {
+  const userWithPosts = await Promise.all(
+    [1, 2].map(async (userId) => {
+      const user = await fetchUserData(userId);
+      const posts = await fetchUserPosts(user.userId);
+      return { ...user, posts: posts };
+    })
+  );
+  console.log(userWithPosts);
+}
+fetchUser();
