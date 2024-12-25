@@ -43,15 +43,96 @@ header {
 main {
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.main-div {
+  width: 80%;
 }
 .top-part {
+  margin: 40px 80px;
+  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 50vh;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 .top-part h1 {
+  margin-top: 3rem;
   font-weight: 500;
+  font-size: 3rem;
+  line-height: 2;
+  letter-spacing: 2px;
+}
+.top-part p {
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #222;
+}
+.top-part a {
+  background: rgb(25, 181, 243);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  padding: 15px 20px;
+  margin: 30px 0;
+  border-radius: 5px;
+}
+.middle-part {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 10px;
+}
+.middle-part h3 {
+  font-size: 25px;
+  font-weight: 200;
+  color: #222;
+}
+.middle-part small {
+  color: #222;
+  font-size: 15px;
+}
+.middle-part small span {
+  font-size: 13px;
+}
+.middle-part small span a {
+  text-decoration: none;
+  color: black;
+  letter-spacing: 1px;
+}
+.version-part {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.column {
+  width: 300px;
+  background: rgb(243, 242, 242);
+  padding: 20px;
+  display: grid;
+  grid-template-rows: 0.8fr 0.8fr 0.8fr 0.2fr;
+}
+.column h3 {
+  font-size: 18px;
+}
+.hash {
+  text-align: center;
+  word-break: break-all;
+  cursor: pointer;
+  line-height: 1rem;
+  font-size: 10px;
+}
+.hash p {
+  font-size: 8px;
 }
