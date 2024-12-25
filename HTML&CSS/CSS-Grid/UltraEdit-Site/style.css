@@ -45,14 +45,19 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 .main-div {
+  margin: 2rem 0;
   width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .top-part {
-  margin: 40px 80px;
+  margin: 0 80px;
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
@@ -64,9 +69,9 @@ main {
 }
 .top-part h1 {
   margin-top: 3rem;
+  padding-bottom: 10px;
   font-weight: 500;
   font-size: 3rem;
-  line-height: 2;
   letter-spacing: 2px;
 }
 .top-part p {
@@ -88,7 +93,7 @@ main {
 .middle-part {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 90%;
   margin-bottom: 50px;
   font-family: Arial, Helvetica, sans-serif;
   gap: 10px;
@@ -112,19 +117,44 @@ main {
 }
 .version-part {
   font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
+  width: 970px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 .column {
-  width: 300px;
+  max-width: 300px;
+  height: 220px;
   background: rgb(243, 242, 242);
   padding: 20px;
   display: grid;
   grid-template-rows: 0.8fr 0.8fr 0.8fr 0.2fr;
+  border-radius: 5px;
+  text-align: center;
 }
 .column h3 {
   font-size: 18px;
+  text-align: center;
+}
+.column h4 {
+  font-size: 12px;
+  font-weight: 100;
+  text-align: center;
+}
+.download {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.download button {
+  background: #5cb85c;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
 }
 .hash {
   text-align: center;
@@ -135,4 +165,23 @@ main {
 }
 .hash p {
   font-size: 8px;
+}
+@media screen and (max-width: 1000px) {
+  .navbar ul li {
+    display: none;
+  }
+  .version-part {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .version-part {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .column {
+    min-width: 100%;
+  }
 }
