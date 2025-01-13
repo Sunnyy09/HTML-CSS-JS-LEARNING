@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Differene b/w user click and script click</title>
+  </head>
+  <body>
+    <button id="payBtn">pay</button>
+  </body>
+  <script>
+    const btn = document.getElementById("payBtn");
+
+    function pay(e) {
+      if (e.isTrusted) {
+        /* isTrusted key insures the user click or fraud click.
+           true - if clicked by user.
+           false - if clicked by fraud. 
+        */
+        alert("1000INR Paid.");
+      } else {
+        alert(`Fraud Alert`);
+      }
+    }
+
+    btn.addEventListener("click", pay, false);
+  </script>
+</html>

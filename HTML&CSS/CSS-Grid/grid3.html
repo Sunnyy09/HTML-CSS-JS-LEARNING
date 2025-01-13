@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 80vw;
+        border: 2px solid black;
+        display: grid;
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: 1fr 2fr 1fr;
+        /* grid-template-columns: repeat(3, 1fr); another way to write this */
+        /* grid-template-columns: repeat(4, minmax(100px, 1fr)); */
+      }
+      .item {
+        border: 2px solid purple;
+        /* width: 55px; */
+        height: 55px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+    </div>
+  </body>
+</html>
